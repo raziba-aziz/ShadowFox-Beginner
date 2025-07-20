@@ -2,55 +2,221 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio</title>
-  <link rel="stylesheet" href="css/home.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Raziba Aziz | Full Stack Developer Portfolio</title>
+  <link href="https://cdn.materialdesignicons.com/6.6.96/css/materialdesignicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Floating Back to Top button */
+    #backToTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #00ffe5;
+      color: #000;
+      border: none;
+      padding: 0.7rem 1rem;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: bold;
+      display: none;
+      box-shadow: 0 0 10px #00ffe5aa;
+      z-index: 1000;
+      transition: background-color 0.3s ease;
+    }
+    #backToTop:hover {
+      background-color: #ff4c4c;
+      color: #fff;
+    }
+    /* Section Padding */
+    section {
+      padding: 3rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    /* Smooth scroll behavior for whole document */
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+    /* Navigation active link highlight */
+    nav ul li a.active {
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-decoration-color: #ff4c4c;
+      text-underline-offset: 6px;
+      font-weight: 600;
+    }
+    /* Navigation fixes */
+    nav ul li a {
+      cursor: pointer;
+    }
+    /* Skills Section Styling */
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+    .skill-card {
+      background-color: #1a1a1a;
+      border-left: 5px solid #00ffe5;
+      padding: 1rem;
+      max-width: 400px;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      border-radius: 5px;
+      transition: transform 0.3s ease;
+    }
+    .skill-card:hover {
+      transform: scale(1.05);
+      background-color: #2a2a2a;
+    }
+    .skill-icon {
+      width: 50px;
+      height: 50px;
+      flex-shrink: 0;
+    }
+    .skill-info {
+      flex-grow: 1;
+      color: #f7c1dc;
+      font-family: 'Times New Roman', serif;
+    }
+    .skill-name {
+      font-weight: bold;
+      color: #00ffe5;
+      margin-bottom: 0.3rem;
+    }
+    .skill-proficiency {
+      font-style: italic;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+    /* Soft skills styling */
+    .soft-skills {
+      margin-top: 1rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      justify-content: center;
+    }
+    .soft-skill-badge {
+      background-color: #00ffe5;
+      color: #000;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-family: 'Segoe UI', sans-serif;
+      user-select: none;
+      box-shadow: 0 0 8px #00ffe5aa;
+      transition: background-color 0.3s ease;
+    }
+    .soft-skill-badge:hover {
+      background-color: #00bbaa;
+      color: #fff;
+    }
+    /* Certifications cards */
+    .certifications {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+    .cert-card {
+      background-color: #1a1a1a;
+      border-left: 5px solid #ff4c4c;
+      padding: 1rem 1.5rem;
+      max-width: 320px;
+      border-radius: 5px;
+      transition: transform 0.3s ease;
+      cursor: default;
+    }
+    .cert-card:hover {
+      transform: scale(1.03);
+      background-color: #2a2a2a;
+    }
+    .cert-title {
+      font-weight: bold;
+      color: #ff4c4c;
+      margin-bottom: 0.5rem;
+      font-family: 'Times New Roman', serif;
+    }
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .intro-container, .journey {
+        flex-direction: column;
+      }
+      .intro-right, .intro-left, .journey-left, .journey-right {
+        min-width: 100%;
+        text-align: center;
+      }
+      .skill-card {
+        max-width: 100%;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+      }
+      .skill-icon {
+        margin-bottom: 0.5rem;
+      }
+      .skill-info {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <nav>
     <div class="nav-left">RAZIBA AZIZ</div>
     <ul class="nav-right">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About Me</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#journeyH2">Journey</a></li>
+      <li><a href="#certi">Certifications</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#about">About</a></li>
     </ul>
   </nav>
 
-  <section class="intro-container">
+  <!-- Home Section -->
+  <section id="home" class="intro-container">
     <div class="intro-left">
       <h1 class="heyy">Hey, there! 👋🏻😊</h1>
       <p class="intro-text">I’m Raziba Aziz — a dedicated full stack web developer skilled in HTML, CSS, JavaScript, React, Node.js, and Firebase. I build responsive, scalable web applications with clean code and strong UI/UX focus. Along with technical proficiency, I bring excellent communication, problem-solving, and time management skills. I thrive in collaborative environments and love turning ideas into impactful digital experiences.</p>
+      <button class="resume">Resume</button>
     </div>
     <div class="intro-right">
-      <img src="assets/my photo.jpg" alt="My Photo" class="profile-photo">
+      <img src="assets/my photo.jpg" alt="My Photo" class="profile-photo" />
     </div>
   </section>
-
-  <header class="hero-section">
-    <h1>Welcome to My Full Stack World</h1>
-    <p>Scroll through my journey as a developer</p>
-  </header>
-
-  <section class="journey">
+  <br><br><br><br>
+  <!-- Hero / Journey -->
+  <h2 class="journeyH2" id="journeyH2">DEVELOPER JOURNEY</h2>
+  <section class="journey" id="journey">
+    
     <div class="journey-left">
-      <h2>Developer Journey</h2>
-     <div id="timeline" class="timeline">
+      
+      <div id="timeline" class="timeline">
         <div class="project-card">
-            <h3>2022</h3>
-            <p>Started exploring HTML, CSS, and JS.</p>
+          <h3>2022</h3>
+          <p>I began exploring HTML and CSS to build websites. It’s exciting to learn how these technologies work together to create attractive, responsive, and visually appealing web pages.</p>
         </div>
         <div class="project-card">
-            <h3>2023</h3>
-            <p>Built full-stack projects using the MERN stack.</p>
+          <h3>2023</h3>
+          <p>I started learning JavaScript after gaining hands-on experience with HTML and CSS. By building small projects and experimenting, I discovered how JavaScript brings interactivity and logic to web development.</p>
         </div>
         <div class="project-card">
-            <h3>2024</h3>
-            <p>Interned at XYZ startup as a web developer.</p>
+          <h3>2024</h3>
+          <p>I interned as a web developer at Internship Studio and Varcons Technologies, where I gained practical experience, improved my coding skills, and worked on real-world web development projects using modern technologies.</p>
         </div>
         <div class="project-card">
-            <h3>2025</h3>
-            <p>Mastering deployment, APIs, and system design.</p>
+          <h3>2025</h3>
+          <p>I’m currently diving deeper into web development by studying core concepts, understanding how things work behind the scenes, and improving my problem-solving abilities to build a stronger technical foundation.</p>
         </div>
       </div>
     </div>
@@ -59,6 +225,224 @@
     </div>
   </section>
 
+  <!-- About Section -->
+  <!-- <section id="about" class="day-in-life">
+    <h2>A Day in My Life</h2>
+    <div class="timeline-day">
+      <div class="time-card"><h3>9:00 AM</h3><p>Start the day with a dev article & coffee ☕</p></div>
+      <div class="time-card"><h3>11:00 AM</h3><p>Work on a side project or contribute to open source</p></div>
+      <div class="time-card"><h3>2:00 PM</h3><p>Team coding & backend API development</p></div>
+      <div class="time-card"><h3>5:00 PM</h3><p>UI design or creative CSS experiment 🎨</p></div>
+      <div class="time-card"><h3>9:00 PM</h3><p>Wrap with problem solving or LeetCode 💡</p></div>
+    </div> -->
+
+    <!-- Certifications subsection -->
+    <h2 id="certi" style="margin-top:3rem; text-align: center;">CERTIFICATIONS</h2>
+    <div class="certifications" >
+      <div class="cert-card">
+        <div class="cert-title">Programming in Java - NPTEL (2024) </div>
+        <!-- <p>Completed a comprehensive full stack< web development course covering HTML, CSS, JS, React, Node.js.</p> -->
+      </div>
+      <div class="cert-card">
+        <div class="cert-title">Advanced Java – Cranes Varsity Pvt. Ltd. </div>
+        <!-- <p>Completed a comprehensive full stack web development course covering HTML, CSS, JS, React, Node.js.</p> -->
+      </div>
+      <div class="cert-card">
+        <div class="cert-title">Problem solving through programming in C - NPTEL (2025)</div>
+        <!-- <p>Completed a comprehensive full stack web development course covering HTML, CSS, JS, React, Node.js.</p> -->
+      </div>
+      <div class="cert-card">
+        <div class="cert-title">Java Full Stack Development – GLOINNT Solutions Pvt. Ltd.</div>
+        <!-- <p>Completed a comprehensive full stack web development course covering HTML, CSS, JS, React, Node.js.</p> -->
+      </div>
+      <div class="cert-card">
+        <div class="cert-title">Python Programming – Karunadu Technologies Pvt. Ltd.</div>
+        <!-- <p>Completed a comprehensive full stack web development course covering HTML, CSS, JS, React, Node.js.</p> -->
+      </div>
+      <div class="cert-card">
+        <div class="cert-title">ReactJS Programming – Simplilearn </div>
+        <!-- <p>Completed a comprehensive full stack web development course covering HTML, CSS, JS, React, Node.js.</p> -->
+      </div>
+      <div class="cert-card">
+        <div class="cert-title">Database Management System – NPTEL </div>
+        <!-- <p>Completed a comprehensive full stack web development course covering HTML, CSS, JS, React, Node.js.</p> -->
+      </div>
+      <div class="cert-card">
+        <div class="cert-title">Data Visualization using Power BI and Tableau - Hybritic Info </div>
+        <!-- <p>Completed a comprehensive full stack web development course covering HTML, CSS, JS, React, Node.js.</p> -->
+      </div>
+      <div class="cert-card">
+        <div class="cert-title">Deloitte Australia Data Analytics Job Simulation on Forage </div>
+        <!-- <p>Completed a comprehensive full stack web development course covering HTML, CSS, JS, React, Node.js.</p> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <h2>MY PROJECTS</h2>
+    <!-- <div class="project-card">
+      <h3>Smart Medicine Dispenser</h3>
+      <p>A full stack IoT + web solution to automate medication schedules with alerts and caregiver dashboards.</p>
+      <button onclick="window.open('#', '_blank')">View Demo</button>
+    </div> -->
+    <div class="project-card">
+      <h3>WaterAware</h3>
+      <p>Developed a professional Water Conservation website using HTML, CSS, JavaScript. Features include water usage tracking, conservation tips, event hosting/joining, waste reporting, and awareness tools to promote sustainable water use.</p>
+      <button onclick="window.open('https://raziba-aziz.github.io/WaterConservation-Website/', '_blank')">View Demo</button>
+    </div>
+
+    <div class="project-card">
+      <h3>BlockTrack-Attendance</h3>
+      <p>Blockchain-based secure attendance system with real-time logs and immutable records.</p>
+      <!-- <button onclick="window.open('#', '_blank')">View Demo</button> -->
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2>TECHNICAL SKILLS</h2>
+    <div class="skills-container">
+      <!-- Sample skill card -->
+      <div class="skill-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" class="skill-icon" />
+        <div class="skill-info">
+          <div class="skill-name">HTML5</div>
+          <div class="skill-proficiency">Advanced proficiency in structuring semantic web content.</div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" class="skill-icon" />
+        <div class="skill-info">
+          <div class="skill-name">CSS3</div>
+          <div class="skill-proficiency">Advanced skills in responsive design and animations.</div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="skill-icon" />
+        <div class="skill-info">
+          <div class="skill-name">JavaScript</div>
+          <div class="skill-proficiency">Advanced knowledge of ES6+, asynchronous programming, and DOM manipulation.</div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="skill-icon" />
+        <div class="skill-info">
+          <div class="skill-name">React</div>
+          <div class="skill-proficiency">Intermediate experience building SPAs with hooks and state management.</div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" class="skill-icon" />
+        <div class="skill-info">
+          <div class="skill-name">Node.js</div>
+          <div class="skill-proficiency">Intermediate proficiency in backend development with Express and REST APIs.</div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase" class="skill-icon" />
+        <div class="skill-info">
+          <div class="skill-name">Firebase</div>
+          <div class="skill-proficiency">Experience with realtime databases, authentication, and hosting.</div>
+        </div>
+      </div>
+    </div>
+
+    <h2 style="margin-top:3rem;">SOFT SKILLS</h2>
+    <div class="soft-skills">
+      <div class="soft-skill-badge">Communication</div>
+      <div class="soft-skill-badge">Problem Solving</div>
+      <div class="soft-skill-badge">Time Management</div>
+      <div class="soft-skill-badge">Teamwork</div>
+      <div class="soft-skill-badge">Adaptability</div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <!-- <section id="contact" class="contact">
+    <h2>CONTACT ME</h2>
+    <div class="terminal">
+      <div class="terminal-output">
+        &gt; Hi there! Want to work together? Drop your message below:
+      </div>
+      <form>
+        <input type="text" placeholder="&gt; Your Name" required />
+        <input type="email" placeholder="&gt; Your Email" required />
+        <textarea placeholder="&gt; Your Message..." required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </section> -->
+
+  <!-- <section id="about" class="about-footer">
+  <h2 class="side-heading">About</h2>
+  <div class="info">
+    <p>Raziba Aziz — Full Stack Web Developer crafting clean, scalable web experiences.</p>
+    <p>Contact me: <a href="mailto:raziba@example.com" style="color:#00ffe5;">raziba@example.com</a> | Phone: +123-456-7890</p>
+    <p>Find me on <a href="#" style="color:#00ffe5;">LinkedIn</a> | <a href="#" style="color:#00ffe5;">GitHub</a></p>
+  </div>
+  </section> -->
+
+  <footer class="about" id="about">
+    <h2>CONTACT</h2>
+    <p>Email: razibaaziz04@gmail.com</p>
+    <p>Phone: +91 9334687994</p>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/raziba-aziz-651096328/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <i class="mdi mdi-linkedin" style="font-size: 36px; color: #ff4c4c;"></i>
+      </a>
+      <a href="https://github.com/raziba-aziz" target="_blank" rel="noopener" aria-label="GitHub">
+        <i class="mdi mdi-github" style="font-size: 36px; color: #ff4c4c; "></i>
+      </a>
+    </div>
+  </footer>
+
+
+
+
+
+  <button id="backToTop" title="Back to top">↑</button>
+
   <script src="js/script.js"></script>
+  <script>
+    // Back to Top Button logic
+    const backToTopBtn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTopBtn.style.display = 'block';
+      } else {
+        backToTopBtn.style.display = 'none';
+      }
+    });
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Smooth scroll active link toggle
+    const sections = document.querySelectorAll('section, header.hero-section');
+    const navLinks = document.querySelectorAll('nav ul li a');
+
+    function activateLink() {
+      let scrollPos = window.scrollY + 120;
+      sections.forEach(section => {
+        if (
+          scrollPos >= section.offsetTop &&
+          scrollPos < section.offsetTop + section.offsetHeight
+        ) {
+          navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (
+              link.getAttribute('href').substring(1) === section.id ||
+              (section.tagName === 'HEADER' && link.getAttribute('href') === '#home')
+            ) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    }
+    window.addEventListener('scroll', activateLink);
+    activateLink();
+  </script>
 </body>
 </html>
