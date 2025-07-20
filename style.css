@@ -1,0 +1,456 @@
+/* Combined style.css + home.css */
+
+/* Reset & base */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #89f7fe, #b53fec );
+  /* light blue (#89f7fe) to medium blue (#66a6ff) */
+  color: #fff; /* keep text white for contrast */
+  min-height: 100vh;
+}
+
+/* Navigation */
+nav {
+  background-color: #121212;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 10000; 
+}
+
+.nav-left {
+  color: #ff4c4c;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.nav-right a {
+  color: #efefef;
+  font-weight: 100;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.nav-right a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-decoration-color: #ff4c4c; /* bright red */
+  text-underline-offset: 6px;
+}
+
+/* Nav list */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* Hero Section */
+.hero-section {
+  text-align: center;
+  padding: 2rem 2rem 5rem 2rem;
+  /* background: radial-gradient(circle, #1a1a1a, #000); */
+  margin-bottom: 2rem;
+  color: black;
+}
+
+/* Intro Container (Home) */
+.intro-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  /* background-color: #1a1a1a; */
+  flex-wrap: wrap;
+}
+
+.resume {
+  background-color: #ff4c4c ;
+  color: white;
+}
+
+.resume:hover {
+  background-color: #00ffe5;
+  color: black;
+}
+
+.intro-left {
+  flex: 1;
+  padding-right: 1rem;
+  min-width: 300px;
+}
+
+.intro-right {
+  flex: 1;
+  text-align: right;
+  min-width: 300px;
+}
+
+.heyy {
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.intro-text {
+  font-size: 1.2rem;
+  color: black;
+  font-style: italic;
+  font-family: 'Times New Roman', Times, serif;
+
+  transform: translateX(-50px);
+  opacity: 0;
+  animation: slideIn 1s ease-out forwards;
+}
+
+@keyframes slideIn {
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Profile photo */
+.profile-photo {
+  width: 250px;
+  height: 300px;
+  border-radius: 10%;
+  object-fit: cover;
+  border: 3px solid #00ffe5;
+}
+
+/* Journey Section */
+.journey {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 3rem 2rem;
+  gap: 2rem;
+}
+
+.journeyH2 {
+  text-align: center;
+}
+
+.journey-left,
+.journey-right {
+  flex: 1;
+  min-width: 300px;
+}
+
+.journey-right {
+  margin-top: 20rem;
+}
+
+/* Timeline & Project Cards */
+.timeline,
+.projects,
+.contact,
+.day-in-life {
+  padding: 3rem 2rem;
+}
+
+.projects h2 {
+  text-align: center;
+}
+
+.project-card {
+  text-align: left;
+}
+
+.project-card,
+.time-card {
+  background-color: #1a1a1a;
+  margin: 1rem auto;
+  padding: 1rem;
+  border-left: 5px solid #00ffe5;
+  max-width: 600px;
+  transition: transform 0.3s ease;
+  border-radius: 4px;
+}
+
+.project-card:hover,
+.time-card:hover {
+  transform: scale(1.03);
+  background-color: #2a2a2a;
+}
+
+/* Buttons */
+button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #00ffe5;
+  color: #000;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+/* button:hover {
+  background-color: #00bbaa;
+  color: #fff;
+} */
+
+/* Terminal Contact Form */
+.terminal {
+  background-color: #000;
+  padding: 1rem;
+  font-family: monospace;
+  max-width: 600px;
+  margin: auto;
+  border: 1px solid #00ffe5;
+  border-radius: 6px;
+}
+
+.terminal input,
+.terminal textarea {
+  width: 100%;
+  background-color: #0d0d0d;
+  color: #00ffe5;
+  border: 1px solid #00ffe5;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  border-radius: 4px;
+  font-family: monospace;
+  resize: vertical;
+}
+
+/* Canvas for airplane animation */
+#airplaneCanvas {
+  width: 100%;
+  height: 400px;
+  background-color: #000;
+  border: 1px solid #00ffe5;
+  border-radius: 12px;
+  display: block;
+  margin: auto;
+}
+
+/* Skills Section */
+#skills h2 {
+  text-align: center;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.skill-card {
+  background-color: #1a1a1a;
+  border-left: 5px solid #ff4c4c;
+  padding: 1rem;
+  max-width: 400px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: scale(1.05);
+  background-color: #2a2a2a;
+}
+
+.skill-icon {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+}
+
+.skill-info {
+  flex-grow: 1;
+  color: #f7c1dc;
+  font-family: 'Times New Roman', serif;
+}
+
+.skill-name {
+  font-weight: bold;
+  color: #00ffe5;
+  margin-bottom: 0.3rem;
+}
+
+.skill-proficiency {
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+/* Soft skills */
+.soft-skills {
+  margin-top: 1rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: center;
+}
+
+.soft-skill-badge {
+  background-color: #ff4c4c;
+  color: #000;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  user-select: none;
+  box-shadow: 0 0 8px #00ffe5aa;
+  transition: background-color 0.3s ease;
+}
+
+.soft-skill-badge:hover {
+  background-color: #00ffe5;
+  color: black;
+}
+
+/* Certifications cards */
+.certifications {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding: 0 2rem;
+}
+
+
+.cert-card {
+  background-color: #1a1a1a;
+  border-left: 5px solid #ff4c4c;
+  padding: 1rem 1.5rem;
+  max-width: 320px;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+  cursor: default;
+}
+
+.cert-card:hover {
+  transform: scale(1.03);
+  background-color: #2a2a2a;
+}
+
+.cert-title {
+  font-weight: bold;
+  color: white;
+  margin-bottom: 0.5rem;
+  font-family: 'Times New Roman', serif;
+}
+
+/* Back to Top button */
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #00ffe5;
+  color: #000;
+  border: none;
+  padding: 0.7rem 1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  display: none;
+  box-shadow: 0 0 10px #00ffe5aa;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+#backToTop:hover {
+  background-color: #00bbaa;
+  color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .intro-container,
+  .journey {
+    flex-direction: column;
+  }
+  .intro-right,
+  .intro-left,
+  .journey-left,
+  .journey-right {
+    min-width: 100%;
+    text-align: center;
+  }
+  .skill-card {
+    max-width: 100%;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+  }
+  .skill-icon {
+    margin-bottom: 0.5rem;
+  }
+  .skill-info {
+    font-size: 1rem;
+  }
+}
+
+
+/* .about-footer {
+  background-color: #000000; 
+  color: #ccc;
+  padding: 2rem 3rem;
+  font-family: 'Segoe UI', sans-serif;
+  min-height: auto;
+  max-width: 700px;
+  margin: auto;
+  text-align: left;
+}
+
+.about-footer .side-heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #00ffe5;
+  margin-bottom: 1rem;
+  user-select: none;
+}
+
+.about-footer .info {
+  font-family: 'Comic Sans MS', 'Brush Script MT', cursive, handwriting;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: #f7c1dc;
+}
+
+
+@media (max-width: 600px) {
+  .about-footer {
+    padding: 1.5rem 1rem;
+    max-width: 100%;
+    text-align: center;
+  }
+  .about-footer .side-heading {
+    font-size: 2rem;
+  }
+  .about-footer .info {
+    font-size: 1.1rem;
+  }
+} */
+
+.about {
+  background-color: #000000;
+  padding: 1rem 2rem;
+}
+
+.about h2 {
+  text-align: left;
+}
+
+.about p {
+  font-family: 'Times New Roman', Times, serif;
+  font-style: italic;
+}
+
+
